@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom';
 import Home from "./pages/Home"
 import Products from "./pages/Products"
 import ProductsDetail from "./pages/ProductsDetail"
+import StateIntro from './state/StateIntro';
+import StateProducts from './state/StateProducts';
 
 
 function App() {
+  return <StateProducts/>
   return (
     <BrowserRouter>
       <ul style={{display:'flex', justifyContent:'space-evenly'}}>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {products} from '../data/products'
+import {productsData} from '../data/products'
 
 function Products() {
   return (
@@ -13,7 +13,7 @@ function Products() {
           <th>STOCK</th>
         </thead>
         <tbody>
-        {products.map((item) => (
+        {productsData.map((item) => (
             <tr key={item.id}>
               <td><Link to={`/products/${item.id}`}>{item.id}</Link></td>
               <td><Link to={`/products/${item.id}`}>{item.name}</Link></td>
