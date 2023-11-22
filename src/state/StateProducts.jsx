@@ -3,17 +3,18 @@ import { productsData } from "../data/products";
 
 const StateProducts = () => {
   const [products, setProducts] = useState(productsData);
+  const [original, setOriginal]=useState(productsData);
 
   const deleteProduct = (id) => {
     let isDeleted = window.confirm("silmek istediğinize emin misiniz?");
     if (isDeleted) {
-      let filtered = products.filter((q) => q.id != id);
+      let filtered = original.filter((q) => q.id != id);
       setProducts(filtered);
     }
   };
   const stock = () => {
     console.log("Stock");
-    let filtered = products.filter((q)=>q.unitsInStock<5)
+    let filtered = original.filter((q)=>q.unitsInStock<5)
     setProducts(filtered);
   };
   const showAll = () => {
@@ -22,12 +23,12 @@ const StateProducts = () => {
   };
   const cheap = () => {
     console.log("cheap");
-    let filtered=products.filter((q)=>q.unitPrice<20)
+    let filtered=original.filter((q)=>q.unitPrice<20)
     setProducts(filtered);
   };
   const expensive = () => {
     console.log("expensive");
-    let filtered=products.filter((q)=>q.unitPrice>20)
+    let filtered=original.filter((q)=>q.unitPrice>20)
     setProducts(filtered);
   };
 
